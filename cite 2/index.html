@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Agricultura Familiar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Loja de Agricultura Familiar - Produtos frescos e artesanais do campo.">
+</head>
+<body>
+    <header class="bg-brown text-white text-center py-3 sticky-top">
+        <div class="logo">
+            <img src="img/Logo.webp" alt="Logotipo" class="img-fluid" style="max-width: 200px;">
+        </div>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-white" href="#entrada">Página de Entrada</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#apresentacao">Apresentação</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#informacoes">Informações</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#produtos">Seleção de Produtos</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#sobre">Sobre a Empresa</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="entrada" class="text-center py-5">
+        <h1>Bem-vindo à nossa loja de Agricultura Familiar!</h1>
+        <p>Oferecemos produtos frescos e artesanais diretamente do campo, cultivados com carinho e cuidado.</p>
+        <img src="img/Interface.webp" alt="Imagem em destaque" class="img-fluid">
+    </section>
+
+    <section id="apresentacao" class="py-5 section">
+        <div class="container">
+            <h2>Apresentação</h2>
+            <p>Nosso site é dedicado a promover a agricultura familiar, valorizando os produtores locais e oferecendo uma seleção de produtos de alta qualidade, que vão desde hortaliças e legumes até doces caseiros e itens artesanais.</p>
+        </div>
+    </section>
+
+    <section id="informacoes" class="py-5 bg-light section">
+        <div class="container">
+            <h2>Informações e Justificativas</h2>
+            <p>A agricultura familiar desempenha um papel fundamental na produção de alimentos saudáveis e sustentáveis. Ao adquirir nossos produtos, você está apoiando a economia local e incentivando práticas agrícolas responsáveis e ecológicas.</p>
+        </div>
+    </section>
+
+    <section id="produtos" class="py-5 section">
+        <div class="container">
+            <h2>Seleção de Produtos</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="img/Alface.webp" alt="Alface Fresco" class="img-fluid" onclick="showImageModal('path_to_product_image1')">
+                        <p>Alface Fresco</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="img/Cenoura.webp" alt="Cenoura Fresca" class="img-fluid" onclick="showImageModal('path_to_product_image2')">
+                        <p>Cenoura Fresca</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="path_to_product_image3" alt="Tomate" class="img-fluid" onclick="showImageModal('path_to_product_image3')">
+                        <p>Tomate</p>
+                    </div>
+                </div>
+                <!-- Adicione mais produtos conforme necessário -->
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-5 bg-light section">
+        <div class="container">
+            <h2>Sobre a Empresa</h2>
+            <p>Somos uma empresa familiar comprometida com a agricultura sustentável. Nossos produtos são cultivados com métodos tradicionais e respeitam o meio ambiente. Nossa missão é trazer à sua mesa alimentos de alta qualidade, cultivados localmente.</p>
+        </div>
+    </section>
+
+    <section id="contato" class="py-5 section">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco pelo WhatsApp ou siga-nos no Instagram para ficar por dentro das novidades.</p>
+            <ul>
+                <li><a href="https://wa.me/your_number" target="_blank">WhatsApp</a></li>
+                <li><a href="https://instagram.com/your_profile" target="_blank">Instagram</a></li>
+            </ul>
+            <h3>Formulário de Contato</h3>
+            <form id="contact-form" action="YOUR_FORM_ACTION_URL" method="POST">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-brown text-white text-center py-3">
+        <p>&copy; 2024 Loja de Agricultura Familiar. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function showImageModal(imagePath) {
+            // Aqui você pode implementar uma modal para exibir a imagem em tamanho maior
+            alert('Abrindo imagem: ' + imagePath);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.product-card img');
+            images.forEach((img) => {
+                img.onload = () => img.classList.add('loaded'); // Adiciona a classe 'loaded' quando a imagem termina de carregar
+            });
+        });
+
+        document.addEventListener("scroll", function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section) => {
+                const sectionPosition = section.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3; // Ajuste conforme necessário
+                if (sectionPosition < screenPosition) {
+                    section.classList.add('visible'); // Adiciona a classe 'visible' para tornar a seção visível
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* Estilos Gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2f7719; /* Bege */
+    padding-top: 80px; /* Espaçamento para evitar sobreposição com o header fixo */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #8B4513; /* Marrom */
+    position: fixed; /* Mantém o header fixo no topo */
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adiciona padding para um espaçamento interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar o header */
+}
+
+/* Logo */
+header .logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Navegação */
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffd700; /* Cor de destaque ao passar o mouse */
+}
+
+/* Títulos */
+h1, h2 {
+    color: #228B22; /* Verde */
+    margin-bottom: 20px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #8B4513; /* Marrom */
+    color: rgb(216, 54, 54);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Seções */
+.section {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.section.visible {
+    opacity: 1;
+}
+
+/* Cartões de Produto */
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    margin: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.product-card img {
+    max-width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.product-card img.loaded {
+    opacity: 1;
+}
+
+/* Botões */
+.btn {
+    background-color: #228B22; /* Verde */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #006400; /* Verde escuro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Formulário de Contato */
+form {
+    margin-top: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+    }
+
+    .product-card {
+        margin-bottom: 30px;
+    }
+
+    body {
+        padding-top: 120px; /* Ajuste para telas menores */
+    }
+}
